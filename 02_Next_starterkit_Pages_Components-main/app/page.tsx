@@ -15,7 +15,7 @@ export default function Home() {
       titel: "Vibecoding: je eigen apps maken met AI",
       beschrijving: "Waarom een dure app gebruiken als AI er een voor je op maat kan maken? Ontdek de wereld van vibecoding.",
       categorie: "De Helpdesk",
-      kleur: "text-red-600",
+      kleur: "text-blue-600",
       img: "/vibecoding.png"
     },
     {
