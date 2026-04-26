@@ -1,71 +1,84 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
 export default function Home() {
+  const artikels = [
+    {
+      id: "artikel1",
+      titel: "Leidt AI-slop tot de dood van sociale media?",
+      beschrijving: "Sociale media slibben dicht met AI-video's van mensen die niet bestaan. Blijven we daar in 2026 naar kijken?",
+      categorie: "De Technocraat",
+      kleur: "text-blue-600",
+      img: "/ai-cat.png"
+    },
+    {
+      id: "artikel2",
+      titel: "Vibecoding: je eigen apps maken met AI",
+      beschrijving: "Waarom een dure app gebruiken als AI er een voor je op maat kan maken? Ontdek de wereld van vibecoding.",
+      categorie: "De Helpdesk",
+      kleur: "text-red-600",
+      img: "/vibecoding.png"
+    },
+    {
+      id: "artikel3",
+      titel: "Het Spartacus-moment van Silicon Valley",
+      beschrijving: "Dario Amodei (Anthropic) neemt een moedig ethisch standpunt in tegen de overheid. Een keerpunt voor Big Tech?",
+      categorie: "De Technocraat",
+      kleur: "text-blue-600",
+      img: "/dario.png"
+    }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <main className="max-w-6xl mx-auto py-24 px-6 font-sans">
+      {/* Krantenkop / Header */}
+      <header className="border-b-4 border-black pb-8 mb-12 text-center">
+        <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter font-serif">
+          Nieuws
+        </h1>
+        <p className="text-sm mt-4 font-medium text-gray-500 uppercase tracking-widest">
+          Project Reactiviteit & UX/UI • Hayley Bachot
+        </p>
+      </header>
 
-          <main className="flex min-h-screen items-center justify-center">
-            <Button>Click me</Button>
-          </main>
+      {/* Grid met de 3 kaarten */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {artikels.map((artikel) => (
+          <Link key={artikel.id} href={`/${artikel.id}`} className="group">
+            <div className="border-b border-gray-200 pb-6 h-full flex flex-col">
+              {/* Image box */}
+              <div className="aspect-video mb-4 overflow-hidden bg-gray-100 rounded-sm shadow-sm">
+                <img 
+                  src={artikel.img} 
+                  alt={artikel.titel} 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
 
-        </div>
-      </main>
-    </div>
+              <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${artikel.kleur}`}>
+                {artikel.categorie}
+              </p>
+
+              <h2 className="text-2xl font-serif font-bold leading-tight mb-3 group-hover:underline">
+                {artikel.titel}
+              </h2>
+
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                {artikel.beschrijving}
+              </p>
+
+              <span className="text-xs font-bold uppercase border-b-2 border-black pb-1 self-start">
+                Lees artikel
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <footer className="mt-20 pt-10 border-t border-gray-100 text-center">
+        <p className="text-gray-400 text-xs">
+          © 2026 Hayley Bachot • UX/UI Opdracht
+        </p>
+      </footer>
+    </main>
   );
 }

@@ -27,16 +27,16 @@ export default function GlobalNavbar() {
           {/* Sectie voor de schoolopdracht artikelen */}
           <div className="pt-4 flex flex-col space-y-4">
             <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">
-              Analyses De Standaard
+              Recent
             </p>
             <a href="/artikel1" className="hover:underline text-gray-700">
-              Artikel 1: Analyse
+              Artikel 1
             </a>
             <a href="/artikel2" className="hover:underline text-gray-700">
-              Artikel 2: Analyse
+              Artikel 2
             </a>
             <a href="/artikel3" className="hover:underline text-gray-700">
-              Artikel 3: Analyse
+              Artikel 3
             </a>
           </div>
 
