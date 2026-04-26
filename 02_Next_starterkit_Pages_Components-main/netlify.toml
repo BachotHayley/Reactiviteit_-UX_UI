@@ -1,6 +1,6 @@
 [build]
-  # Let op: de naam moet EXACT zijn zoals in VS Code (met de underscore én streepjes)
-  base = "Reactiviteit_-UX_UI"
+  # Het volledige pad naar de map waar de package.json in woont
+  base = "Reactiviteit_-UX-UI/02_Next_starterkit_Pages_Components-main"
   
   command = "npm run build"
   publish = ".next"
