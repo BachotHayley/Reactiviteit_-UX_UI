@@ -1,6 +1,6 @@
 [build]
   # Het volledige pad naar de map waar de package.json in woont
-  base = "Reactiviteit_-UX-UI/02_Next_starterkit_Pages_Components-main"
+  base = "/02_Next_starterkit_Pages_Components-main"
   
   command = "npm run build"
   publish = ".next"
