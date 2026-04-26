@@ -1,4 +1,7 @@
 [build]
+  # DEZE REGEL MOET ERBIJ:
+  base = "Reactiviteit_-UX_UI"
+  
   command = "npm run build"
   publish = ".next"
 
